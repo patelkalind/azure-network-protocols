@@ -28,14 +28,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Actions and Observations</h2>
 
-Create a Resource Group
+<br>**Create a Resource Group**</br>
+
 Before creating a virtual machine on Azure, you must first create a Resource Group. On the Azure portal, navigate to Resource Groups and click "Create". After clicking Create, be sure to provide it with a unique name of your choosing as well as the region.
 
+![image](https://github.com/user-attachments/assets/403aad64-0f10-4471-9b7c-3ae4f42a01f5)
  
  
 
-Create a Virtual Machine
+<br>**Create a Virtual Machine**</br>
+
 After creating your Resource Group, the next step is to create a Virtual Machine. In this case, there will be two virtual machines, Windows and Linux. However, we will make sure that each step is clearly explained to help you understand how the process works.
+
+
 
  
 Create a Windows 10 Virtual Machine
