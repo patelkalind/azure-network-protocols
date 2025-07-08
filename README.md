@@ -22,8 +22,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 •	Step 1 – Create a Resource Group
+<br>
 •	Step 2 – Create Windows Virtual Machine
+<br>
 •	Step 3 – Create Linux Virtual Machine
+<br>
 •	Step 4 – Download and Install Wireshark in Windows VM
 
 <h2>Actions and Observations</h2>
@@ -33,18 +36,25 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 Before creating a virtual machine on Azure, you must first create a Resource Group. On the Azure portal, navigate to Resource Groups and click "Create". After clicking Create, be sure to provide it with a unique name of your choosing as well as the region.
 
 ![image](https://github.com/user-attachments/assets/403aad64-0f10-4471-9b7c-3ae4f42a01f5)
+
  
+![image](https://github.com/user-attachments/assets/ac2300bd-b765-40eb-b9d5-cd5864b11a6e)
  
 
 <br>**Create a Virtual Machine**</br>
 
 After creating your Resource Group, the next step is to create a Virtual Machine. In this case, there will be two virtual machines, Windows and Linux. However, we will make sure that each step is clearly explained to help you understand how the process works.
 
+![image](https://github.com/user-attachments/assets/caf62a0e-23a6-4120-86e6-73c160dec0d2)
 
 
  
-Create a Windows 10 Virtual Machine
+<be>**Create a Windows 10 Virtual Machine**</br>
+
 In the first of two virtual machines, here is a step-by-step process of creating a virtual machine. After clicking Create, ensure that you assign your virtual machines to the previously created Resource Group. Once that is complete, proceed to make the Windows 10 VM. Provide a unique name as well as a region for where it’ll be based on Azure.
+
+![image](https://github.com/user-attachments/assets/905c7398-b143-49a2-960f-5fd85fa3d2fa)
+
 
  
 Under Image, select “Windows 10 Pro version 22HZ – x64” and the size as “Standard”
