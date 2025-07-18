@@ -49,7 +49,7 @@ After creating your Resource Group, the next step is to create a Virtual Machine
 
 
  
-<be>**Create a Windows 10 Virtual Machine**</br>
+<br>**Create a Windows 10 Virtual Machine**</br>
 
 In the first of two virtual machines, here is a step-by-step process of creating a virtual machine. After clicking Create, ensure that you assign your virtual machines to the previously created Resource Group. Once that is complete, proceed to make the Windows 10 VM. Provide a unique name as well as a region for where it’ll be based on Azure.
 
@@ -59,37 +59,75 @@ In the first of two virtual machines, here is a step-by-step process of creating
  
 Under Image, select “Windows 10 Pro version 22HZ – x64” and the size as “Standard”
 
+<img width="975" height="439" alt="image" src="https://github.com/user-attachments/assets/342045b3-4231-4481-aa1b-62a56b1cc9c5" />
+
  
 Once that is complete, provide a unique username and password to log in to the virtual machine using your PC’s application to access Remote Desktop.
 
+<img width="975" height="438" alt="image" src="https://github.com/user-attachments/assets/50c691c9-8e4f-41d3-bc73-ea8129a9d85e" />
+
  
 Once the basic settings have been configured, go to Networking and create a New Virtual Network and Subnet.
+
+<img width="975" height="440" alt="image" src="https://github.com/user-attachments/assets/baa98fff-e901-4c80-b76d-57cb7feefa74" />
  
 After creating the virtual network and subnet, navigate to Review + Create and ensure that all your settings are configured to your preferences.
+
+<img width="975" height="439" alt="image" src="https://github.com/user-attachments/assets/0090ee97-6b10-451e-9230-bd2f762409f8" />
  
 After reviewing the settings of the Windows 10 VM, click Create and observe the deployment of the virtual machine once it’s completed.
  
+<img width="975" height="547" alt="image" src="https://github.com/user-attachments/assets/8d28337e-ca57-45fc-b24b-ae65a1c12ad9" />
  
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/4406c087-eed5-4d40-9c96-3882809db982" />
 
-Create a Linux Virtual Machine
+<br>**Create a Linux Virtual Machine**</br>
+
 Once the Windows VM has been made, it is now time to start creating the Linux VM in Azure. Just like the Windows VM, provide a unique name as well as the region where it’ll be assigned. Ensure the Linux VM is located within the same Resource Group as the Windows VM.
+
+<img width="975" height="439" alt="image" src="https://github.com/user-attachments/assets/1098ff8b-3e21-4bf8-a4c8-e7522d7747f5" />
+
  
 Under the image, click Ubuntu Server.
+
+<img width="975" height="440" alt="image" src="https://github.com/user-attachments/assets/f4788db8-1923-456f-8397-be4dcbdd2b52" />
+
  
 Provide a unique Username and Password before exiting this page. In this case, the same username was used for both the Linux VM and the Windows VM. However, that is up to you.
+
+<img width="975" height="439" alt="image" src="https://github.com/user-attachments/assets/b169e068-d069-489b-8af8-fec89cea8c1c" />
+
  
 Click Next and go to “Networking”. This is a crucial step to take, as you must ensure the Linux VM is under the same Resource Group and Virtual Network as the Windows VM to achieve a successful exercise.
+
+<img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/fa5cad30-dc1d-44e7-a53e-81a6372ada36" />
+
  
 After customizing the settings above, go to “Review+Create” and ensure all your settings are correct before clicking “Create.”
+
+<img width="975" height="439" alt="image" src="https://github.com/user-attachments/assets/e8d40776-0118-42da-9358-80c0ac6ef402" />
+
  
 After clicking Create, observe the deployment process of the Linux VM as seen in the screenshots below:
+
+<img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/0de3f751-7536-46ae-8407-71b7b05949f0" />
+
+<img width="975" height="438" alt="image" src="https://github.com/user-attachments/assets/cb1a9a06-6874-4362-a830-457d3cf08fd7" />
+
+
  
  
 After ensuring both virtual machines are in the same subnet and resource group, you may access the machines through Azure under the resource group created below:
+
+<img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/f5ce90f9-a212-46bb-af84-ede27964ebe7" />
+
  
 One thing to be aware of is that the virtual machines created can incur a significant maintenance fee. Therefore, you would want to disable the machines when you are not using them in case you want to take a break, as shown here:
+
+<img width="975" height="442" alt="image" src="https://github.com/user-attachments/assets/84262866-0785-46ac-b9eb-a7e49a9e3698" />
+
  
-Log in to the Windows Virtual Machine using your Remote Desktop Application on your PC (Observe ICMP Traffic)
+<br>**Log in to the Windows Virtual Machine using your Remote Desktop Application on your PC (Observe ICMP Traffic)**</br>
 
 After creating the virtual machines in Azure, the next step is to log in to the Windows VM using a Remote Desktop Application that is pre-installed on your PC. If not, go ahead and install it now.
  
