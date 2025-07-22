@@ -130,65 +130,121 @@ One thing to be aware of is that the virtual machines created can incur a signif
 <br>**Log in to the Windows Virtual Machine using your Remote Desktop Application on your PC (Observe ICMP Traffic)**</br>
 
 After creating the virtual machines in Azure, the next step is to log in to the Windows VM using a Remote Desktop Application that is pre-installed on your PC. If not, go ahead and install it now.
+
+<img width="839" height="945" alt="image" src="https://github.com/user-attachments/assets/25c34c96-d9cd-4128-96af-543d8abd638a" />
  
 After logging in, this is what the Remote Desktop will look like on the Windows VM in this exercise.
+
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/9868a91a-03dc-4f45-a1c1-5c3af35bf12c" />
  
 On your Windows VM, download and install Wireshark. Follow the instructions as observed below:
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/9afdcc14-8e21-47f3-b83b-608d2b953a7d" />
  
+<img width="906" height="743" alt="image" src="https://github.com/user-attachments/assets/0a5087db-cee0-47aa-bdbc-bf0edee00799" />
  
 After installing Wireshark, open the application and start the packet capture process
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/fe2ec326-e43b-40a8-af62-f5e7fd402108" />
  
 Once you start the packet capture process, observe it to understand the process and how it works visually.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/ffa3bda1-37c1-40cd-b398-12f8de06df17" />
  
 From there, filter the packet capture for “ICMP”
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/ffafb5a6-24b6-409d-acec-5c8b9a59c3dd" />
  
 Right now, you don’t see anything when the ICMP filter has been placed on the packet capture. However, this is where we return to Azure on the physical PC to have it ping the Linux VM. From there, retrieve the private IP address of the VM from Azure.
+
+<img width="975" height="438" alt="image" src="https://github.com/user-attachments/assets/f6f55abc-ea71-414d-ba21-b4dddc5d0c72" />
  
 After retrieving the Linux Private IP address shown above, return to the Windows VM and run Windows PowerShell as an administrator. This is where we start the process to ping the Linux VM from the Windows VM.
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/5b2f534c-96f4-4694-9754-815b015cac7c" />
  
 After pinging the Linux VM, return to Wireshark and observe the ping from there.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/e5154656-7817-46d3-9c84-25cdd1f55cd1" />
  
 After observing the ping activity using Wireshark, the next step is to initiate a non-stop ping from the Windows VM to the Linux VM. Return to Powershell and type out the ping command with the IP address, followed by “-t”.
+
+<img width="975" height="934" alt="image" src="https://github.com/user-attachments/assets/55d20209-cb5f-4872-9c4a-3b0b8d67de3d" />
  
 Return to Wireshark and observe the communication between the two VMs in terms of pinging.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/203f550c-083d-4eea-91e8-1e2d7486dfaf" />
  
 
 Now that you have seen what a non-stop ping looks like between two virtual machines, the next exercise is disabling incoming traffic (ICMP). For this to work, we must return to the Azure Portal and go to Network Settings on the Linux VM
+
+<img width="975" height="442" alt="image" src="https://github.com/user-attachments/assets/70f13562-4544-4164-a2c0-5f5199ed443f" />
  
 From there, go to Network Security Group and Inbound Security Rules
+
+<img width="975" height="442" alt="image" src="https://github.com/user-attachments/assets/3870f480-264e-4e4f-b0e5-9db8153f7b78" />
  
 Create a rule that would disable any ping activity between the two VMs
+
+<img width="975" height="440" alt="image" src="https://github.com/user-attachments/assets/9d421ec0-d7b7-41df-bb38-85e153978e19" />
  
 Return to the Windows 10 VM and observe how the ping is denied on PowerShell with the words “request timed out.”
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/de6c32b0-acec-43b7-8ea6-d779db04698e" />
  
 Additionally, return to Wireshark and observe the packet capture using the same ICMP filter to see how the ping is denied.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/f3b5a6dd-b84d-431d-a97c-1d60cf958bee" />
  
 See the difference between the previous packet capture and the current one? During the last packet capture, you can see “request” and “reply”, indicating the ping is working and the two virtual machines are communicating with each other. With this filter and the ping denied from Azure’s portal, it's only a “request”. However, the good news is we can restart the ping.
+
 Return to the Azure portal and initiate the process of deleting the security rule that denies the ping.
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/c0a0c007-14d1-4600-bf1d-75ef1b60de18" />
  
 After clicking “Yes”, verify that the security rule has been deleted 
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/c0978146-f09b-422c-8e2e-6013d9d98833" />
  
 After deleting the security rule that disabled the ping activity, the ping should resume as it was previously. To verify, return to the Windows 10 VM and check the PowerShell for the ping activity.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/8c1dd354-acbd-43c6-827e-7f4f5af95e4f" />
  
 Additionally, verify the ping activity resumption using Wireshark and observe the activity.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/c62fa435-62dc-415d-8c94-6fdf1829e8c4" />
  
 That concludes the exercise for observing ping activity within the ICMP traffic. Before we conclude the activity and move on to the next exercise, we must go to PowerShell to stop the ping activity by pressing “Ctrl C” as the command. As shown below, the nonstop ping has ceased.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/bdbf083d-26c8-40a1-be6e-6717fa98283b" />
  
 Verify on Wireshark that the nonstop ping activity has ceased
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/ca8c0f7d-4006-4289-89ee-6cd49137b8cc" />
  
 To summarize, this is how you observe ICMP traffic. The tools needed for this are Wireshark Packet Capture, Powershell, as well as the Azure Portal to configure the virtual machines. Next, we will observe the SSH traffic and demonstrate how to do it effectively.
 
-Observe SSH traffic
+<br>**Observe SSH traffic**</br>
 
 After filtering for ICMP traffic, the next step is to observe the SSH traffic on Wireshark. To do so, start up Wireshark Packet Capture and filter for SSH. As you may notice below, there is currently nothing there. Please be patient, as the process will unfold in the following steps.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/9669bfab-b950-423e-8cea-d26335cef899" />
  
 After filtering for SSH on Wireshark, open Powershell as an administrator and type in “ssh labuser@(private IP address on Linux VM)”. From there, type YES to continue and then enter the username and password of the Linux VM to begin the SSH process.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/6e06fd00-0fcf-403a-8275-7833528c94ec" />
  
 After starting the SSH process on Powershell, return to Wireshark and observe the packet capture with the SSH filter
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/c30a0bbc-26e5-4f79-860c-91d8cf10fbde" />
  
 After filtering for SSH on Wireshark, return to Powershell and enter these commands for SSH as shown below:
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/15d84904-4c60-4d7a-ba1a-351c0277d595" />
  
 After entering the commands on Powershell, return to Wireshark and observe the packet capture, and notice the difference 
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/66f06e00-9d54-47d9-be9e-af0c5a8d6fbc" />
  
 Additionally, you can also filter for “tcp port 22”
  
