@@ -247,56 +247,94 @@ After entering the commands on Powershell, return to Wireshark and observe the p
 <img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/66f06e00-9d54-47d9-be9e-af0c5a8d6fbc" />
  
 Additionally, you can also filter for “tcp port 22”
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/9e998378-46f1-46b6-9a1b-ba3228937a01" />
  
 After observing all the packet captures under the SSH filter in Wireshark and entering commands in Powershell, you can end the process by typing the command “exit”.
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/f778a4a6-1b62-42dd-bb11-f9bcd53c19a4" />
  
 After you end the SSH process on PowerShell, please return to Wireshark to verify the end of the SSH packet capture.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/226fe7b4-37ae-4727-8165-021dcef8e727" />
  
 This concludes the exercise of observing SSH traffic.
 
-Observing DHCP Traffic
+<br>**Observing DHCP Traffic**</br>
 
 In this exercise, we will observe DHCP traffic on both PowerShell and Wireshark. The first step in the process is to open Wireshark and filter for DHCP. At first, you won’t see anything, but this will be explained in the following steps.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/4fd5c9bf-b1ee-41b8-91e1-070659adad30" />
  
 Open PowerShell as an administrator and run the command “ipconfig /renew” (without the quotation marks).
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/fe4b0ef8-201e-4d56-8139-caa93c481d37" />
  
 Please return to Wireshark and observe the DHCP activity after running the command in PowerShell.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/16a1ea42-b2bd-49f6-88bf-dd3eba077ec5" />
  
 Alternatively, you can also filter on Wireshark using UDP filters such as “udp.port == 67 || udp.port == 68”
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/d3284060-59ac-46e4-9e4f-9028b4a96b7f" />
  
 This concludes the exercise for observing DHCP filters.
 
-Observe DNS Traffic
+<br>**Observe DNS Traffic**</br>
 
-In this exercise, we will observe DNS traffic on Wireshark as well as using PowerShell to generate a nslookup of select websites to observe its traffic. The first thing to do is open up Wireshark and filter for DNS. Unlike previous exercises where the starting point of creating a filter is empty, there’s a lot more activity this time around.
+In this exercise, we will observe DNS traffic using Wireshark and PowerShell to generate an nslookup of select websites, allowing us to observe their traffic. The first step is to open Wireshark and filter for DNS. Unlike previous exercises where the starting point of creating a filter is empty, there’s a lot more activity this time around.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/e9ee874e-aba8-4644-b0c4-6e64e21f0c85" />
  
 Return to PowerShell and attempt to do an nslookup for two websites. The first website is Disney.com. Once you type in nslookup Disney.com, you will see the IP addresses of both the virtual machine and Disney’s website.
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/9fb3feb7-f501-4240-94b0-5b5115298e07" />
  
 After you type in the nslookup, please return to Wireshark and observe the DNS activities shown below.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/86328d29-61ad-4f55-a6e3-b032f58a3f2a" />
  
 The following example of the nslookup is Pixar.com. Just like the first example, type in nslookup Pixar.com in PowerShell, and you can see the result
+
+<img width="975" height="931" alt="image" src="https://github.com/user-attachments/assets/49d60bba-7506-41a2-a521-3b4d6547c530" />
  
 Return to Wireshark and observe the nslookup activity of Pixar’s website
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/2707f862-3bfb-4ee7-802b-f59ec0f96823" />
  
 Alternatively, you can use the filters udp.port == 53 || tcp.port == 53 to observe the DNS traffic
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/399569ad-32a1-48f6-ab3d-4b0f82366467" />
  
 This concludes the exercise for observing DNS traffic.
 
-Observe RDP Traffic
+<br>**Observe RDP Traffic**</br>
 
 In this final and brief exercise, we will observe RDP traffic in Wireshark. To begin, we must filter for RDP traffic using this filter: tcp.port == 3389. After setting the filter, please review the example provided below.
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/a83241e3-361f-440b-b353-b73cdb69b4d3" />
  
-As you may have noticed, the traffic is non-stop compared to other commands. The reason is that the RDP protocol constantly displays a live stream of traffic between two computers, hence why the traffic is non-stop.
+As you may have noticed, the traffic is non-stop compared to other commands. The reason is that the RDP protocol constantly displays a live stream of traffic between two computers, which is why the traffic is non-stop.
+
+<br>**Wrap Up**</br>
 
 This concludes the tutorial on Network Security Groups. Before completing this activity, please ensure that the virtual machines and resource groups on Microsoft Azure are deleted to avoid recurring charges. To do this, we must close the Remote Desktop Connection. After that, delete the Resource Groups created in the beginning. 
 
 (Resource Group 1 being deleted as shown in the screenshot below)
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/6d09372e-ffbe-4ee9-b361-ff251f7da921" />
  
 (Resource Group 2 being deleted as shown in the screenshot below)
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/baa45f3d-af49-48c5-bba2-e3b5e2320b3b" />
  
 (Confirmation of Resource Group 1 being deleted)
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/c02ab289-54eb-4a9f-b0ac-491b53adb1a8" />
  
 (Confirmation of Resource Group 2 being deleted)
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/f31266e7-0ec6-4107-b8b8-ffee25011666" />
  
 
 
